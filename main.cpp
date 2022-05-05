@@ -2,9 +2,7 @@
 #include <stdio.h> 
 #include <time.h>
 using namespace std;
-                                                // FAZERRR   EMPATEEEEE
-                                                // ERRO: AO ACESSAR A ULTIMA POSICAO ([2][2]) O PROGRAMA TA ENCERRANDO, AO MENOS QUE A JOGADA NESSA >
-                                                // POSICAO CONTABILIZE VITORIA PARA UM DOS JOGADORES
+                                               
 int i,j; 
 char casa[3][3];
 bool fim=false,ganhou=false;
@@ -39,7 +37,7 @@ void ocuptab(){  //                 FUNCAO PARA PREENCHER A MATRIZ COM ESPAÇOS 
     }    
 }
 
-void mostrartab(){  //            FUNCAO PARA APRESENTAR A TABELA AOS JOGADORES, INICIALMENTE VAZIA, MAS VAI SENDO PREENCHIDA CONFORME AS JOGADAS OCORREM
+void mostrartab(){  //            FUNCAO PARA MOSTRAR A TABELA
         cout<<endl;
     for(int i=0 ; i<3 ; i++){
         cout<<" "<< casa[i][0] <<"  |";
@@ -51,7 +49,7 @@ void mostrartab(){  //            FUNCAO PARA APRESENTAR A TABELA AOS JOGADORES,
         }
     }
 }
-
+    // FUNCAO PARA VERIFICAR VITORIAS/EMPATES
 bool verificawin(){
     // VERIFICANDO POSSIBILIDADES DE VITORIA
     
@@ -75,7 +73,8 @@ bool verificawin(){
             ganhou=true;
             fim=true;
             return true;
-            
+          
+     // VERIFICANDO POSSIBILIDADES DE EMPATE
         }else if(casa[0][0]!=' ' && casa[0][1]!=' ' && casa[0][2]!=' ' && casa[1][0]!=' ' && casa[1][1]!=' ' && casa[1][2]!=' ' 
         && casa[2][0]!=' ' && casa[2][1]!=' ' && casa[2][2]!=' ')
         {
